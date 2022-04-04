@@ -23,3 +23,15 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+
+Cypress.Commands.add('getAllPosts', () => {
+  cy.request('http://localhost:3000/api/posts').then((res) => {
+    return cy.wrap(res.body)
+  })
+})
+
+Cypress.Commands.add('getFirstPost', () => {
+  cy.request('http://localhost:3000/api/posts').then((res) => {
+    return cy.wrap(res.body).its(0)
+  })
+})
