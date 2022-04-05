@@ -11,6 +11,16 @@ A Next.js Blog for the Real World Testing with Cypress Curriculum.
   ```
 - Use `.its(number)` to get the value of an array at index 'number'
 - and `.its('attr')` to get the attribute of that element
+- `cy.request()` works similar to a node request, access the content with a `.then(res => {})`
+- `cy.fixture()` takes in the filename argument for the fixture
+  - it automatically searches the fixtures folder
+  - no need to add a `.json` to the argument
+  - access content with a `.then()` after
+- need to figure out where all of the valid arguments are for methods like `its()`
+- [`its()` gets a property's value on the previously yielded subject](https://docs.cypress.io/api/commands/its#Syntax)
+- chainable getters: `to`, `be`, `been`, `is`, `that`, `which`, `and`, `has`, `have`, `with`, `at`, `of`, `same`
+  - [Available Assertions](https://docs.cypress.io/guides/references/assertions#TDD-Assertions)
+
 
 ## Other Notes
 
@@ -24,7 +34,6 @@ Added jsconfig.json with options
 ```
 to stop the auto-import of the wrong package every time `cy.` was typed
 
-The network request specs do not work because the page '/network' does not exist
 
 ## Installation
 
